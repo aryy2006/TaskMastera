@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- TÍTULO -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mis tareas"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <!-- DESCRIPCIÓN -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Organiza tus tareas del día"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp" />
+
+        <!-- ESTADO -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estado de la tarea:"
+            android:textSize="16sp"
+            android:layout_marginTop="15dp" />
+
+        <Spinner
+            android:id="@+id/spinnerEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- TAREAS -->
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estudiar para la prueba" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hacer informe de Android" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preparar presentación" />
+
+        <!-- PRIORIDAD -->
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prioridad alta" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prioridad baja" />
+
+        <!-- PROGRESO -->
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="60"
+            android:layout_marginTop="10dp" />
+
+        <!-- CALIFICACIÓN -->
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="3" />
+
+        <!-- IMAGEN -->
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_launcher"
+            android:contentDescription="Imagen de TaskMaster" />
+
+        <!-- BOTÓN PARA HABLAR -->
+        <Button
+            android:id="@+id/btnHablar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="🔊 Hablar"
+            android:textSize="16sp" />
+
+        <!-- TAREA DESTACADA -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tarea destacada"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Completar actividad de Android"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tarea completada" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- DISEÑO REUTILIZABLE -->
+        <include
+            layout="@layout/layout_tarea_reutilizable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
+
+        <!-- LISTA DE TAREAS -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerTareas"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+
+</ScrollView>
+
